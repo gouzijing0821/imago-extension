@@ -1,10 +1,76 @@
-# Privacy Policy for Imago
+# Imago 隐私权政策
 
-  Imago does not collect, transmit, sell, or share user data.
+**最后更新日期：2026 年 7 月 15 日**
 
-  The extension runs locally in the browser. It reads image URLs and image-related attributes from the current webpage only to provide image URL
-  detection, preview, filtering, and zooming features.
+Imago 是一款用于识别、预览、筛选、检查和下载网页图片的浏览器扩展，也可以对用户主动选择的图片进行 OCR 文字识别。
 
-  User preferences, such as saved URL filter groups, are stored locally using Chrome storage. These settings are not sent to any external server.
+## 数据收集
 
-  Imago does not use analytics, tracking, advertising, remote code, or third-party data processors.
+Imago 不会收集、上传、出售、出租或向开发者及第三方共享个人信息或用户数据。
+
+Imago 不使用数据分析、广告、用户跟踪、遥测或第三方数据处理服务。
+
+## 本地处理
+
+Imago 在用户的浏览器本地运行。为实现相关功能，扩展可能处理：
+
+- 图片 URL 及网页中的图片相关属性，包括 `img`、图片链接、懒加载属性和 `srcset`；
+- 用户主动预览、执行 OCR 或选择下载的图片内容；
+- 从用户所选图片中生成的 OCR 识别结果；
+- 用户创建的 URL 过滤组和扩展功能设置。
+
+图片预览、OCR 识别和 ZIP 文件生成均在浏览器本地完成。Imago 不会将图片、网页内容、图片 URL 或 OCR 结果上传至开发者服务器。
+
+## 本地存储
+
+Imago 使用 Chrome 扩展本地存储保存：
+
+- 用户创建的 URL 过滤组；
+- 页面浮标开关；
+- OCR 识别后自动复制开关；
+- 用户选择的 OCR 模式。
+
+这些信息仅保存在用户的浏览器中，不会发送给开发者或任何外部服务器。
+
+## 权限用途
+
+Imago 仅请求实现功能所必需的权限：
+
+- **存储（`storage`）：** 在浏览器本地保存过滤组和功能设置。
+- **下载（`downloads`）：** 仅在用户主动发起批量下载后保存 ZIP 文件。
+- **离屏文档（`offscreen`）：** 在不可见的扩展页面中执行本地 OCR 和 ZIP 文件生成，因为这些任务无法在 Manifest V3 Service Worker 中稳定完成。
+- **主机访问权限（`<all_urls>`）：** 识别不同网页中的图片 URL，并在用户主动预览、识别或下载图片时访问可能位于不同域名的图片资源。
+
+Imago 不会利用主机访问权限收集浏览历史、建立用户画像或投放广告。
+
+## 剪贴板与下载文件
+
+当用户启用 OCR 自动复制功能并主动执行识别后，OCR 结果可能被复制到剪贴板。用户可以随时在扩展设置中关闭该功能。
+
+只有用户主动发起批量下载时，Imago 才会生成 ZIP 文件。下载文件保存在浏览器配置的下载位置，并由用户自行管理。
+
+## 远程代码与外部服务器
+
+Imago 不执行远程代码。扩展使用的脚本、OCR 模型、字典和 WebAssembly 资源均随扩展本地打包。
+
+Imago 不设立用于接收或保存用户数据的开发者服务器。在预览、OCR 或用户主动下载图片时，浏览器可能直接请求当前网页中已有的图片 URL，以完成相应操作。
+
+## 数据保留与删除
+
+开发者不会在任何服务器上保留用户数据。
+
+用户可以通过以下方式删除本地保存的设置和过滤组：
+
+- 在扩展中删除已保存的过滤组；
+- 清除浏览器中的扩展数据；
+- 卸载 Imago。
+
+下载到设备上的 ZIP 文件可由用户随时自行删除。
+
+## 未成年人隐私
+
+Imago 不会主动收集未成年人或其他用户的个人信息。
+
+## 隐私权政策更新
+
+当 Imago 的功能或权限用途发生变化时，本政策可能随之更新。最新版本将发布在本网址，并在页面顶部注明最后更新日期。
